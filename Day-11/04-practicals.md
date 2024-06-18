@@ -27,3 +27,8 @@ print(f"{server_name} status: {status}")
 ```
 
 In this example, the function `get_server_status` optimizes the retrieval of the server status by using the `get` method and providing a default value if the server name is not found.
+Explanation:
+server_config.get(server_name, {}):
+The get method is used to fetch the dictionary corresponding to server_name. If the server_name does not exist, it returns an empty dictionary {}.
+{}.get('status', 'Server not found'):
+Once we have the dictionary for the server, we use the get method again to fetch the status key. If the key does not exist, it returns 'Server not found'.
