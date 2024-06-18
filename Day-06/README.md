@@ -19,3 +19,5 @@ Here are the main types of operators in Python:
 7. **Bitwise Operators:** Bitwise operators are used to perform operations on individual bits of binary numbers. They include bitwise AND, OR, XOR, and more.
 
 8. **Precedence of Operations:** Operators in Python have different levels of precedence, which determine the order in which operations are performed in an expression.
+
+https://ee.hawaii.edu/~tep/EE160/Book/chap5/subsection2.1.4.1.html
