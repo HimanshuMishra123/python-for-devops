@@ -33,3 +33,10 @@ if response.status_code == 200:
         print(f"{creator}: {count} PR(s)")
 else:
     print(f"Failed to fetch data. Status code: {response.status_code}")
+
+# Output smaple
+#PR Creators and Counts:
+#johnDoe: 3 PR(s)
+#janeSmith: 2 PR(s)
+#developer123: 1 PR(s)
+#contributorXYZ: 1 PR(s)
