@@ -5,7 +5,10 @@ from flask import Flask
 #The __name__ variable is passed to the Flask class to tell it where to look for resources like templates and static files.
 app = Flask(__name__)
 
-@app.route('/')  #This is a decorator that tells Flask which URL should trigger the hello_world function. In this case, the root URL (/).
+
+#This is a decorator that tells Flask which URL should trigger the hello_world function. In this case, the root URL (/).
+#Decorator performs some action before the function execution. you can also use decorators for authentication before accessing the function or a service(example any aws service)
+@app.route('/')  
 def hello_world():
     return 'Hello, World!'
 
