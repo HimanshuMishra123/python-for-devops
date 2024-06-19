@@ -46,7 +46,7 @@ payload = json.dumps( {
   "update": {}
 } )
 
-response = requests.request(
+response = requests.request(                #this request line is calling the api to create jira issue
    "POST",
    url,
    data=payload,
