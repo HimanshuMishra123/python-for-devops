@@ -3,7 +3,7 @@
 import requests
 from requests.auth import HTTPBasicAuth
 import json
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -11,11 +11,11 @@ app = Flask(__name__)
 @app.route('/createJira', methods=['POST'])
 def createJira():
 
-    url = "https://veeramallaabhishek.atlassian.net/rest/api/3/issue"
+    url = "https://mankur123.atlassian.net/rest/api/3/issue"
 
     API_TOKEN=""
 
-    auth = HTTPBasicAuth("", API_TOKEN)
+    auth = HTTPBasicAuth("m.ankur123@gmail.com", API_TOKEN)
 
     headers = {
         "Accept": "application/json",
@@ -24,26 +24,26 @@ def createJira():
 
     payload = json.dumps( {
         "fields": {
-        "description": {
-            "content": [
-                {
-                    "content": [
-                        {
-                            "text": "Order entry fails when selecting supplier.",
-                            "type": "text"
+            "description": {
+                "content": [
+                    {
+                        "content": [
+                            {
+                                "text": "Order entry fails when selecting supplier.",
+                                "type": "text"
+                            }
+                        ],
+                        "type": "paragraph"
                         }
                     ],
-                    "type": "paragraph"
-                    }
-                ],
-            "type": "doc",
-             "version": 1
+                "type": "doc",
+                "version": 1
         },
         "project": {
-           "key": "AB"
+           "key": "HM"
         },
         "issuetype": {
-            "id": "10006"
+            "id": "10005"
         },
         "summary": "Main order flow broken",
     },
@@ -51,13 +51,18 @@ def createJira():
     } )
 
 
-    response = requests.request(
-        "POST",
-        url,
-        data=payload,
-        headers=headers,
-        auth=auth
+    gitdata = json.loads(request.get_json())
+    issuebody = gitdata.get("comment", {}).get("body")
+    if issuebody == "jira":
+        response = requests.request(
+            "POST",
+            url,
+            data=payload,
+            headers=headers,
+            auth=auth
     )
+    else :
+        return ("Please type jira if you are trying to create Jira issue")
 
     return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
 
