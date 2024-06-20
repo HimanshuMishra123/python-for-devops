@@ -51,8 +51,8 @@ def createJira():
     } )
 
 
-    gitdata = json.loads(request.get_json())
-    issuebody = gitdata.get("comment", {}).get("body")
+    gitdata = request.get_json()                        #The request.get_json() method reads the raw JSON data from the request body and parses it into a Python dictionary. This method is provided by Flask to simplify handling JSON data in incoming requests.
+    issuebody = gitdata.get("comment", {}).get("body")  #extracts the body field from within the comment object in dictionery
     if issuebody == "jira":
         response = requests.request(
             "POST",
