@@ -1,3 +1,4 @@
+Environment variables are used to manage configuration settings and sensitive information(API key, tokens, passwords, certificates etc.) in a way that is both secure and easily configurable.<br/>
 Using environment variables in Python is straightforward and can be done using the `os` module and "python-dotenv" package. <br/>
 
 ### Setting Environment Variables
