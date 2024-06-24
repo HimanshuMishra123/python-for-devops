@@ -1,5 +1,5 @@
 #### Imp. Note: when you want to deal with sensitive information you will go with environment variables not command line arguments, as in Comm. line arg. someone can see what run command you gave during the process but when you use env variable you don't write passwords etc. on run command and script read the variable itself so security maintained.<br/>
-EXample : Comm. line arg. -   python file.py <password>   <br/>
+EXample : Comm. line arg. -   python file.py 'password'   <br/>
           Env Var -    python file.py  <br/>
 
 Environment variables are used to manage configuration settings and sensitive information(API key, tokens, passwords, certificates etc.) in a way that is both secure and easily configurable.<br/>
