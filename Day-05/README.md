@@ -3,6 +3,7 @@ Using environment variables in Python is straightforward and can be done using t
 ### Setting Environment Variables
 
 You typically set environment variables in your 'operating system' (directly reading from command line) or via a `.env` file if you are using a package like `python-dotenv`. <br/>
+Python-dotenv reads key-value pairs from a .env file and can set them as environment variables.<br/>
 
 ### Accessing Environment Variables in Python
 
