@@ -37,16 +37,14 @@ print(f'MY_VARIABLE: {my_variable}')
 print(f'MY_VARIABLE with default: {my_variable_with_default}')
 ```
 
-### Running the Script
-
-1. **Run the script**:
+**Run the script**:
    ```sh
    python your_script.py
    ```
 
 ### if not using `.env` file
 
-1. **Set an environment variable** (optional, if not using `.env` file, you can give env vars before running the script/app ):
+1. **Set an environment variable** (optional, if not using `.env` file, you can give env vars before running the script/app on terminal itself ):
    ```sh
    export MY_VARIABLE=hello_world
    ```
