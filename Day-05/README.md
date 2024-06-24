@@ -30,8 +30,8 @@ from dotenv import load_dotenv
 # Load environment variables from .env file if it exists
 load_dotenv()
 
-# Get environment variables
-my_variable = os.getenv('MY_VARIABLE')
+# os.getenv() is used to read the environment variables
+my_variable = os.getenv('MY_VARIABLE')  
 my_variable_with_default = os.getenv('MY_VARIABLE', 'default_value')
 
 print(f'MY_VARIABLE: {my_variable}')
@@ -43,12 +43,15 @@ print(f'MY_VARIABLE with default: {my_variable_with_default}')
    python your_script.py
    ```
 
-### if not using `.env` file
+### if not using python-dotenv package means no `.env` file 
 
 1. **Set an environment variable** (optional, if not using `.env` file, you can give env vars before running the script/app on terminal itself ):
    ```sh
    export MY_VARIABLE=hello_world
    ```
+you can pass multiple env var in multiple line or all in single line (with space in between) <br/>
+example: 
+   export VAR1=value1 VAR2=value2 VAR3=value3
 
 2. **Run the script**:
    ```sh
