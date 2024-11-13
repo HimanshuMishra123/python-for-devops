@@ -7,7 +7,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-# Define a route that handles GET requests
+# Define a route that handles Post requests
 @app.route('/createJira', methods=['POST'])
 def createJira():
 
